@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  user-select: none;
+}
+
+#root
+{
+  width: 100vw;
+  height: 100vh;
+  background-color: #001a33;
+  overflow: hidden;
+}
+
+.container
+{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 250px auto;
+}
+
+.container-minimized
+{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 100px auto;
+  transition: grid-template-columns 1s ease;
+}
+
+.main-content
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.main-heading
+{
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.add-btn
+{
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+}
+
+.add-btn:hover
+{
+  fill: #0086b3;
+}
+
+.home-container, .note-header, .sidebar-header
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.note-header, .home-container
+{
+  border-bottom: 2px solid gray;
+}
+
+.sidebar-header
+{
+  margin-top: 30px;
+}
+
+.home-heading, .note-header-heading, .sidebar-heading
+{
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.sidebar-heading
+{
+  font-size: 1.5rem;
+}
+
+.home-btn, .edit-btn, .delete-btn
+{
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+  margin-right: 10px;
+}
+
+.menu-btn
+{
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: fill 0.2s ease;
+  margin-right: 10px;
+}
+
+.home-btn:hover, .edit-btn:hover, .delete-btn:hover, .menu-btn:hover
+{
+  fill: #0086b3;
+}
+
+.sidebar
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #1f2e2e;
+  color: #fff;
+  transition: width 0.5s ease;
+  overflow: hidden;
+}
+
+.sidebar.minimized 
+{
+  width: 50px;
+  height: fit-content;
+  background-color: #001a33;
+}
+
+.sidebar.minimized .sidebar-header
+{
+  margin-left: 20px;
+}
+
+.sidebar.minimized .menu-btn
+{
+  height: 50px;
+  width: 50px;
+}
+
+.btn-container
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1px;
+}
+
+.home-container:hover, .note-header:hover
+{
+  background-color: #142952;
+  color: black;
+}
+
+.logo-img
+{
+  width: 50px;
+  height: 50px;
+}
+
+.left-header
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.note 
+{
+  display: flex;
+  flex-direction: column;
+  margin: 60px 40px;
+  gap: 60px;
+}
+
+.note-title
+{
+  border: none;
+  padding: 10px;
+  font-size: 32px;
+  background-color: transparent;
+  border-bottom: 2px solid gray;
+  color: #aaa;
+  font-weight: 600;
+  outline: none;
+  width: 90%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.note-area 
+{
+  padding: 12px 18px;
+  font-size: 18px;
+  background-color: transparent;
+  color: #aaa;
+  font-weight: 400;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  resize: none;
+  width: 90%;
+  height: 400px;
+}
+
+.note-area:focus
+{
+  border-color: #0086b3;
+  box-shadow: 0 0 10px rgba(0, 134, 179, 0.5);
+}
+
+.note-title:focus 
+{
+  border-color: #0086b3;
+  box-shadow: 2px 8.5px 10px rgba(0, 134, 179, 0.5);
+}
+
+.note-area::placeholder, .note-title::placeholder
+{
+  color: #aaa; 
+  font-style: italic;
+}
+
+.note-area::-webkit-scrollbar 
+{
+  width: 8px;
+}
+
+.note-area::-webkit-scrollbar-thumb 
+{
+  background-color: #0086b3;
+  border-radius: 4px;
+  border: 2px solid #f1f1f1;
+  transition: background-color 0.3s ease;
+  cursor: grab;
+}
+
+.note-area::-webkit-scrollbar-thumb:active 
+{
+  cursor: grabbing;
+}
+
+.note-area::-webkit-scrollbar-thumb:hover
+{
+  background-color: #005f80;
+}
+
+.note-area::-webkit-scrollbar-track 
+{
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.note-area::-webkit-scrollbar-corner 
+{
+  background-color: transparent;
+}
+
+
+.button-container
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 90%;
+}
+
+.save-btn
+{
+  padding: 5px 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: #0086b3;
+  color: #fff;
+  transition: background-color 0.5s ease;
+}
+
+.save-btn:hover
+{
+  background-color: #2cbff1;
+}
+
+.notification 
+{
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 0.5s ease forwards, fadeOut 0.5s ease 3s forwards;
+}
+
+.notification-container 
+{
+  position: fixed;
+  top: 20px;
+  left: 52%;
+  transform: translateX(-50%);
+  background-color: #1f2e2e;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+@keyframes slideIn
+{
+  from 
+  {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to 
+  {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut 
+{
+  to 
+  {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}

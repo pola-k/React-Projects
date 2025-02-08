@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  user-select: none;
+}
+
+body
+{
+  width: 100vw;
+  height: 100vh;
+  background-color: #2F2929;
+  overflow-x: hidden;
+}
+
+#root
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.header h2
+{
+  width: fit-content;
+  font-size: 2.5rem;
+  color: rgb(229, 221, 221);
+  font-weight: 300;
+}
+
+.header p
+{
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 400;
+  width: 60%;
+  color: rgba(128, 128, 128, 0.636);
+}
+
+.languages-container
+{
+  margin: 20px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  max-width: 400px;
+  min-width: 400px;
+  gap: 5px;
+}
+
+.language
+{
+  text-align: center;
+  border: none;
+  padding: 10px 10px;
+  white-space: nowrap;
+  min-width: 65px;
+  min-height: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+  flex: 0 1 auto;
+}
+
+.letters-container
+{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  max-width: 700px;
+  min-width: 400px;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.letter
+{
+  font-family: "Oswald", sans-serif;
+  border: none;
+  padding: 10px 20px;
+  width: 50px;
+  white-space: nowrap;
+  height: 50px;
+  background-color: #ffaa00;
+  font-size: 1.3rem;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+  flex: 0 1 auto;
+  transition: background-color 0.5s ease;
+}
+
+.guess-container
+{
+  display: flex;
+  padding: 10px 20px;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.guess 
+{
+  border: none;
+  border-bottom: 3px solid gray;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #433c3c;
+  height: 50px;
+  width: 50px;
+}
+
+.lose 
+{
+  background-color:  #ff1a1a;
+  width: 70%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.win
+{
+  background-color: #2d862d;
+  width: 70%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lose h2, .win h2
+{
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.lose p , .win p
+{
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.new-game-btn
+{
+  white-space: nowrap;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  background-color: #433c3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.new-game-btn:hover
+{
+  background-color: #4c4c4c;
+}
+
+.notification 
+{
+  position: fixed;
+  top: 20px;
+  background: rgba(34, 34, 34, 0.9);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 3s ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes fadeInOut 
+{
+  0% 
+  {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% 
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% 
+  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% 
+  {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
