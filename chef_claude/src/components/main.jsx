@@ -10,7 +10,7 @@ export default function Main()
 {
     const [ingredients, setIngredients] = useState([]);
     const ingredientsListItems = ingredients.map((ingredient, index) => <Ingredient key={index} name={ingredient} onClick={() => removeIngredient(ingredient)}/>);
-    const API_KEY = "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"
+    //const API_KEY = "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"
     const [recipe, setRecipe] = useState("")
     const [loading, setLoading] = useState(false);
     const recipeRef = useRef(null);
